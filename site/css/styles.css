@@ -123,6 +123,14 @@ body {
 		font-size: .6em;
 		margin-top: 12px;
 	}
+	#collapsable-nav a { /* collapsed nav menu glyph */
+		font-size: 1.2em;
+	}
+	#collapsable-nav a span {
+		font-size: 1em;
+		margin-right: 5px;
+	}
 }
 
 /*********END MEDIA QUERIES************/
+

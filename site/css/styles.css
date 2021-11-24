@@ -97,10 +97,33 @@ body {
 	border: 2px solid #FFA500;
 	overflow: hidden;
 }
+
 #menu-tile:hover, #specials-tile:hover, #map-tile:hover {
 	box-shadow: 0 0 50px black;
 }
 
+#menu-tile {
+	background: url(../images/tile-menu.jpg) no-repeat;
+	background-position: center;
+}
+#specials-tile {
+	background: url(../images/tile-teddy.jpg) no-repeat;
+	background-position: center;
+}
+
+
+#menu-tile span, #specials-tile span, #map-tile span {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 1.6em;
+	text-transform: uppercase;
+	background-color: #000;
+	color: #fff;
+	opacity: .75;
+}
 
 /***********MEDIA QUERIES**********/
 
@@ -176,8 +199,25 @@ body {
 	}
 	.container .jumbotron {
 		margin-top: 30px;
-		padding: 0;
-		
+		padding: 0;	
+	}
+	/*to solve the problem of the image being too small*/
+	#menu-tile, #specials-tile {
+		width: 360px;
+		margin: 0 auto 15px;
+	}
+}
+/* super extra small devices */
+@media (max-width:  479px) {
+	/*Header*/
+	.navbar-brand h1 { /*Restaurant name*/
+		padding-top: 5px;
+		font-size: 6vw;
+	}
+	/*Home Page*/
+	#menu-tile, #specials-tile {
+		width: 280px;
+		margin: 0 auto 15px;
 	}
 }
 /*********END MEDIA QUERIES************/

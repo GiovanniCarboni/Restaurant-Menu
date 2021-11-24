@@ -96,6 +96,7 @@ body {
 	position: relative; /* this sets up an anchor for the rest of the child elements of the id, makes you able to position them absolutely within the id*/
 	border: 2px solid #FFA500;
 	overflow: hidden;
+	border-radius: 8px;
 }
 
 #menu-tile:hover, #specials-tile:hover, #map-tile:hover {
@@ -124,6 +125,32 @@ body {
 	color: #fff;
 	opacity: .75;
 }
+/*End main content*/
+
+/*FOOTER*/
+.panel-footer {
+	margin-top: 30px;
+	padding-top: 35px;
+	padding-bottom: 30px;
+	background-color: #222;
+	border-top: 0;
+}
+.panel-footer div.row { /*To separate the three rows from the copyright*/
+	margin-bottom: 35px;
+}
+#hours, #address { /*Increase the line height a little bit*/
+	line-height: 2;
+}
+#hours > span, #address > span { /*Increase the font of the subtitiles*/
+	font-size: 1.3em;
+}
+#motto {
+	font-style: italic;
+}
+#motto p:nth-child(2) { /*to separate the two sentences*/
+	margin-top: 25px;
+}
+/*End Footer*/
 
 /***********MEDIA QUERIES**********/
 
@@ -206,6 +233,17 @@ body {
 		width: 360px;
 		margin: 0 auto 15px;
 	}
+
+	/*Footer*/
+	.panel-footer section {
+		margin-bottom: 30px;
+		text-align: center;
+	}
+	.panel-footer section:nth-child(3) {
+		margin-bottom: 0; /*because we have to override the margin we had set before for the whole row*/
+	}
+	.panel-footer section hr {
+	width: 50%;
 }
 /* super extra small devices */
 @media (max-width:  479px) {

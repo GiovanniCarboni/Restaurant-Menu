@@ -49,6 +49,7 @@ body {
 
 #nav-list {
 	margin-top: 10px;
+	margin-bottom: 10px;
 }
 #nav-list a {
 	color:  #8B0000;
@@ -87,7 +88,7 @@ body {
 
 .container .jumbotron {
 	box-shadow: 0 0 50px black;
-	border: 2px solid #FFA500;
+	border-radius: 0;
 }
 #menu-tile, #specials-tile, #map-tile {
 	height: 250px;
@@ -161,6 +162,8 @@ body {
 	width: 200px;
 	height: 200px;
 	margin: 0 auto 15px;
+	border-radius: 8px;
+	border: 2px solid #FFA500;
 }
 .category-tile span {
 	position: absolute;
@@ -175,13 +178,65 @@ body {
 	opacity: .75;
 }
 .category-tile:hover {
-	box-shadow: 0 1px 5px 1px #cccccc;
+	box-shadow: 0 0 50px black;
 }
 #menu-categories-title + div { /*the + targets the next sibiling*/
 	margin-bottom: 50px;
 }
 
 /*End menu-categories page*/
+
+/* SINGLE-CATEGORY PAGE */
+.menu-item-tile { /*separate the row*/
+	margin-bottom: 25px;
+}
+.menu-item-tile hr { 
+	width: 80%;
+}
+.menu-item-tile .menu-item-price {
+	font-size: 1.1em;
+	text-align: right;
+	margin-top: -15px;
+}
+.row div.menu-item-price { /*this looks complicated but overrides the align right of the previous command*/
+	text-align: left;
+	padding-left: 10px;
+}
+.menu-item-photo {
+	position: relative; /*creates the anchor for the inside element*/
+	border: 4px ridge #3F0C1F;
+	overflow: hidden; /*if everything overflows it gets clipped*/
+	padding: 0;
+	margin-right: -15px;
+	margin-left: auto;
+	margin-bottom: 20px;
+	max-width: 250px;
+	border-radius: 8px;
+}
+.menu-item-photo div { /* dish number */
+	position: absolute; /*absolutely within .menu-item-photo*/
+	bottom: 0;
+	right: 0;
+	width: 80px;
+	background-color: #557c3e;
+	text-align: center;
+	border: 2px ridge black;
+	padding-right: 0px;
+	border-radius: 8px 0px 0 0px; 
+}
+.menu-item-description {
+	padding-right: 30px;
+}
+h3.menu-item-title {
+	margin: 0 0 10px;
+}
+.menu-item-details {
+	font-size: .9em;
+	font-style: italic;
+}
+
+
+/* end single-category */
 
 /***********MEDIA QUERIES**********/
 
@@ -215,6 +270,10 @@ body {
 	.container .jumbotron {
 		background: url(../images/jumbotron-800.jpg) no-repeat;
 		height: 350px;
+	}
+	.menu-item-tile .row div.menu-item-price { /*menu.item.price*/
+		text-align: left;
+		padding-left: 60px;
 	}
 }
 
@@ -275,6 +334,18 @@ body {
 	}
 	.panel-footer section hr {
 		width: 50%;
+	}
+
+	/*single menu category page*/
+	.menu-item-photo {
+		margin-right: auto;
+	}
+	.menu-item-title, .menu-item-description, .menu-item-tile .row div.menu-item-price { /*the mess for the price is to override/due to specificity*/
+		text-align: center;
+	}
+	.menu-item-tile .row div.menu-item-price {
+		margin-bottom: 10px;
+	}
 }
 /* super extra small devices */
 @media (max-width:  479px) {
@@ -290,7 +361,7 @@ body {
 	}
 
 	/*menu categories page*/
-	.col-xxs-12 {
+	.col-xxs-12 { /*tiles position for extra small devices*/
 		position: relative;
 		min-height: 1px;
 		padding-right: 15px;
